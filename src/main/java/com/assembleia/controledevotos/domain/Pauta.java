@@ -11,17 +11,17 @@ public class Pauta {
     @Id
     private final String id;
     private final String nome;
-    private final HashMap<String, Associado> votacao;
+    private final HashMap<String, Voto> votacao;
 
-    public Pauta(String id, String nome, HashMap<String, Associado> votacao) {
+    public Pauta(String id, String nome, HashMap<String, Voto> votacao) {
         this.id = id;
         this.nome = nome;
         this.votacao = votacao;
     }
 
-    public void adicionarVoto(String idAssociado, Associado associado) {
+    public void adicionarVoto(String idAssociado, Voto voto) {
 
-        votacao.put(idAssociado, associado);
+        votacao.put(idAssociado, voto);
     }
 
 

@@ -2,6 +2,7 @@ package com.assembleia.controledevotos.controller;
 
 import com.assembleia.controledevotos.DTO.PautaDTO;
 import com.assembleia.controledevotos.domain.Pauta;
+import com.assembleia.controledevotos.exception.PautaNotFoundException;
 import com.assembleia.controledevotos.service.PautaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,5 +31,17 @@ public class PautaController {
                 .buildAndExpand(pauta.getId()).toUri();
 
         return ResponseEntity.created(uri).build();
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<String> contagemDeVotos(@Valid @RequestParam String nome) throws PautaNotFoundException {
+        Pauta pauta = service.findByNome(nome.toUpperCase());
+
+        if (pauta != null) {
+            return ResponseEntity.ok(service.contagemDeVotos(pauta));
+        } else {
+            throw new PautaNotFoundException();
+        }
     }
 }

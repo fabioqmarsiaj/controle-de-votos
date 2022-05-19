@@ -3,6 +3,7 @@ package com.assembleia.controledevotos.service;
 import com.assembleia.controledevotos.DTO.AssociadoDTO;
 import com.assembleia.controledevotos.domain.Associado;
 import com.assembleia.controledevotos.domain.Pauta;
+import com.assembleia.controledevotos.domain.Voto;
 import com.assembleia.controledevotos.exception.AssociadoNotFoundException;
 import com.assembleia.controledevotos.repository.AssociadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
