@@ -1,14 +1,13 @@
-package com.assembleia.controledevotos.domain;
+package com.assembleia.controledevotos.DTO;
 
+import com.assembleia.controledevotos.domain.Voto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 @Data
 @AllArgsConstructor
-public class Associado {
+public class AssociadoDTO {
 
-    @Id
     private String id;
     private String cpf;
     private Voto voto;

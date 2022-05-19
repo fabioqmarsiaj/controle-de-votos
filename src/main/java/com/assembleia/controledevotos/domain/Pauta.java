@@ -9,6 +9,21 @@ import java.util.HashMap;
 public class Pauta {
 
     @Id
-    private String id;
-    private HashMap<Associado, Voto> votacao;
+    private final String id;
+    private final String nome;
+    private final HashMap<String, Associado> votacao;
+
+    public Pauta(String id, String nome, HashMap<String, Associado> votacao) {
+        this.id = id;
+        this.nome = nome;
+        this.votacao = votacao;
+    }
+
+    public void adicionarVoto(String idAssociado, Associado associado) {
+
+        votacao.put(idAssociado, associado);
+    }
+
+
+
 }
